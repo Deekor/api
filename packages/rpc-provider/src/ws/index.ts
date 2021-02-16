@@ -251,6 +251,7 @@ export class WsProvider implements ProviderInterface {
         assert(this.isConnected && !isNull(this.#websocket), 'WebSocket is not connected');
 
         const json = this.#coder.encodeJson(method, params);
+        console.log(json);
         const id = this.#coder.getId();
 
         const callback = (error?: Error | null, result?: any): void => {
